@@ -2,7 +2,9 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{messages[0].text}
+  p Welcome! Please add a new message
+  div
+    a.button(href="/new") new message 
   div
     each val in messages
       div 
