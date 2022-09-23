@@ -5,8 +5,8 @@ block content
     h1= "Your message"
   div
     form(action='/new', method='POST')
-        input(class="form-input",type="text",placeholder="Name", name="userName", autofocus)
-        textarea(class="form-input",placeholder="Message", name="message", cols="30", rows="10")
-        input(class="form-input",id="input-button",type="submit")
-  div
+        input(class="form-input",type="text",placeholder="Name", name="userName", autofocus,required)
+        textarea(class="form-input",placeholder="Message", name="message", cols="30", rows="10", required)
+        input(class="form-input",id="input-button",type="submit", value="Send")
+  div(class="button-container")
     a.button(href="/") Go back

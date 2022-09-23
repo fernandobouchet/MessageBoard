@@ -1,10 +1,18 @@
 var express = require('express');
 var router = express.Router();
+const moment = require('moment');
 
 const messages = [
-  { text: 'Hi there!', user: 'Fernando', added: new Date() },
-  { text: 'Hi yo!', user: 'Fernando', added: new Date() },
-  { text: 'Hi Fer!', user: 'Fernando', added: new Date() },
+  {
+    user: 'Fernando',
+    text: 'Hi there!',
+    added: moment().format('LLL'),
+  },
+  {
+    user: 'Fernando',
+    text: 'This is a mini-project to practice nodeJS & Express',
+    added: moment().format('LLL'),
+  },
 ];
 
 /* GET home page. */
@@ -19,7 +27,7 @@ router.get('/new', function (req, res, next) {
 router.post('/new', (req, res) => {
   let userName = req.body.userName;
   let message = req.body.message;
-  let date = new Date();
+  let date = moment().format('LLL');
   messages.push({
     user: userName,
     text: message,
