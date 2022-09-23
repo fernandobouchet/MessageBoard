@@ -1,13 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome! Please add a new message
+
+  header 
+    h1= title
+    p Welcome! Please add a new message
   div
-    a.button(href="/new") new message 
+    a.button(href="/new") Add message 
   div
     each val in messages
-      div 
+      div(class="message-container") 
           h3= val.user
           p= val.text
-          h6= val.added
+          span= val.added
